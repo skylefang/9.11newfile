@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let</title>
+</head>
+<body>
+	<script>
+	    // 一、let用来声明变量，与var基本用法相同，只是名字不同
+	     //var 存在变量的提升，把变量的作用域提到了声明之前，只不过值是undefined;
+        /*alert(num);
+	    var num=10;*/
+	     //let 不存在变量的提升，用let声明的变量会绑定到当前的作用域中，不允许在声明之前调用。声明之前的区域叫暂时性的死区，必须在声明之后才能使用。
+	    /*alert(num1);  //报错
+	    let num1=20;*/
+	    let num1=20;
+	    function fn(){
+	    	let num1='a';
+	    	console.log(num1);   // a
+	    }
+	    fn();
+	    console.log(num1);       // 20
+
+	   /* let num1;  // 报错
+	    alert(num1);
+	    num1=10;
+	    alert(num1); */
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+		/*var arr=[];
+		for(var i=0;i<10;i++){
+			arr[i]=function(){
+				alert(i);
+			}
+		}
+		arr[2]();
+
+		var arr=[];
+		for(let i=0;i<10;i++){
+			arr[i]=function(){
+				alert(i);
+			}
+		}
+		arr[2]();
+		arr[5]();*/
+	</script>
+</body>
+</html>

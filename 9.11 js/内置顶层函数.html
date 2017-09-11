@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置顶层函数</title>
+</head>
+<body>
+	<script>
+		//内置顶层函数
+		//内置：js本身自带的
+		//顶层：全局作用域，直接拿过来用的
+		/*
+		  escape()    unescape()   Number()   String()
+		  Blooean()   parseInt()   parseFloat()   isNaN()
+		 */
+		
+
+		/* 1.escape() 对非字母数字的字符进行编码
+	    unescape() 对编码后的字符进行解码，再转回汉字*/
+		let str='曹瑞芳';
+		console.log(escape(str));
+		console.log(unescape('%u66F9%u745E%u82B3'));
+
+
+		/* 2.Number() 把其他数据类型的转换成数字，有进制的转换成十进制，识别进制*/
+		console.log(Number(true));    // 1
+		console.log(Number(false));   // 0
+		console.log(Number(null));    // 0
+		console.log(Number(undefined)); //NaN
+		console.log(Number('123'));	  // 123 
+		console.log(Number(123));     // 123
+		console.log(Number('00123')); // 123
+		console.log(Number(0123));    // 83 以0开头且每位数字小于等于7，会默认当做八进制数进行处理，输出的数是十进制的形式
+		console.log(Number(01238));   // 1238
+		console.log(Number(01239));   // 1239
+		console.log(Number(123.00)); // 123
+		console.log(Number('123.00')); // 123
+		console.log(Number('123.01')); // 123.01
+		console.log(Number('123.01.2')); // NaN
+		console.log(Number('123px')); // NaN
+		console.log(Number('0x12')); // 18 十六进制
+		console.log(Number('0b1111')); // 15 二进制
+		console.log(Number('0o11')); // 9 八进制
+		console.log(Number('0o11')); // 9 八进制
+		console.log(Number('abcd')); // NaN
+		console.log(Number('')); // 0
+		console.log(Number('true')); // NaN
+		console.log(Number(true)); // 1
+		console.log(Number(false)); // 0
+
+		/*
+		  3.String() 即在外面加引号，无论什么数据类型都可以变成字符串
+		 */
+		console.log(String(true));  // true
+		console.log(String(undefined));  // undefined
+		console.log(String(123));  // 123
+
+
+		/*
+		  4.Boolean 其它数据类型转成布尔值
+		  为false的6种情况：undefined NaN null '' 0 false
+		  其余全为真，对象全真
+		 */
+		console.log(Boolean(''));  // false
+		console.log(Boolean([]));  // true
+		console.log(Boolean(function(){}));  // true
+
+
+		/*
+		  5.parseInt() 把字符串转换成正数
+		  转换规律：以数字、空格、正负号开头的。从第一个数字字符开始到第一个非数字字符结束。以字母开头的为NaN,不识别小数点
+		 */
+        console.log(parseInt('1234'));   // 1234
+        console.log(parseInt('0b1111'));   // 0
+        console.log(parseInt('50px'));   // 50
+        console.log(parseInt('50px200'));   // 50
+        console.log(parseInt('   50px200'));   // 50
+        console.log(parseInt('   -50px200'));   // -50
+        console.log(parseInt('   -5.00px200'));   // -5
+        console.log(parseInt('abc50px200'));   // NaN
+        console.log(parseInt('   -0.10px200'));   // -0
+
+
+        /*
+          6.parseFloat 与上面parseInt相同，唯一区别就是转成小数，本身为整数转换为还是整数
+         */
+        console.log(parseFloat('50.555px'));   // 50.555
+        console.log(parseFloat('50555px'));   // 50555
+
+
+        /*
+          7.isNaN() is not a Number  ()不是一个数字吗？ 
+         */
+        console.log(isNaN('abcd')); //abcd不是一个数字，话为真，所以为true
+        console.log(isNaN(false)); //false不是一个数字，话为假，所以为false
+
+
+
+	</script>
+</body>
+</html>

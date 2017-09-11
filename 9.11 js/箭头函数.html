@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数</title>
+</head>
+<body>
+	<script>
+		//1.箭头函数 用法相同，写法等价，只是写法更简洁，一般用来方便书写回调函数
+        var fn = function(a){
+        	return a;
+        }
+        alert(fn(3));
+        //上面的函数相当于下面的箭头函数，写法等价
+		var fn= a => a;
+		alert(fn(10));
+		// 人生就像一场戏，因为有缘才相聚，花花，我是百草
+		
+		// 1>箭头函数没有形参时，空下会报错，需要加一个小括号
+		var fn = () =>1
+		alert(fn());
+		// 相当于下面的函数
+		var fn=function(){
+			return 2;
+		}
+		alert(fn());
+
+		// 2>有多个参数时，直接写a,b会报错，所以也需要加小括号
+		var fn=(a,b)=>a+b;
+		alert(fn(1,2));
+		// 相当于下面的函数
+		var fn=function(a,b){
+			return a+b;
+		}
+		alert(fn(2,3));
+
+		// 3>如果代码较多即大于一句时，需要用一个大括号将代码括起来
+		var fn=(a,b)=>{
+			alert(a+b);
+			alert(a-b);
+			alert(a*b);
+			return [a,b];
+		}
+		alert(fn(1,2));
+        // 相当于下面的函数
+        var fn=function(a,b){
+        	alert(a+b);
+			alert(a-b);
+			alert(a*b);
+			return [a,b];
+        }
+        alert(fn(2,2));
+	</script>
+</body>
+</html>

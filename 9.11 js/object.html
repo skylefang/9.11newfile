@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+</head>
+<body>
+	<script>
+	// 1.通过json{}定义一个对象
+	// 2.通过构造函数定义一个对象
+        function Person(){
+
+        }
+        let zhangsan = new Person();
+        let lisi = new Person();
+        // 添加属性 给谁添加，添加什么属性，属性值为多少，一般为初始数据类型
+        // 添加方法 方法是函数，是一个功能,也是名字加点
+        zhangsan.age = 20;
+        zhangsan.weight=100;
+        zhangsan.name='张三';
+        lisi.age = 20;
+        lisi.weight = 90;
+        lisi.class='wuif1707-1';
+        lisi.skill='js';
+        zhangsan.say=function(){
+        	alert(zhangsan.name);
+        }
+        //访问 访问谁的属性，什么属性
+        console.log(zhangsan.age);
+        console.log(zhangsan.weight);
+        console.log(lisi.age);
+        console.log(lisi.weight);
+        //调用方法
+        zhangsan.say();
+
+
+	</script>
+</body>
+</html>
